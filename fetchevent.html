@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>添加网页事项</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="Shortcut Icon" href="img/favicon.ico">
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- 表单，添加事项-->
+      <form name="fetchForm" method="post" action="fetch.php" 
+      onSubmit="return fetcheventForm(this)" class="form-signin">
+        <h3 id="myModalLabel">请输入获取时间的网址</h3>
+        <hr>
+        <label>网址格式，如：<strong>http://pigerla.com/</strong></label>
+        <input type="text" id="website" name="website" class="input-block-level" placeholder="http://pigerla.com/"> 
+        <!--<label>请为该事项添加备注，例如：<strong>去学习</strong></label>
+        <input type="text" id="note" name="note" class="input-block-level" placeholder="去学习">-->
+        <hr>
+        <a href="countdown.php" class="btn btn-large " name="submit" type="submit">返回</a>
+        <button class="btn btn-large btn-primary " name="submit" type="submit">确定</button>
+      </form>
+
+    </div> <!-- the end of/container -->
+
+    <script src="js/jquery-2.0.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function fetcheventForm(fetchForm){
+        if(fetchForm.website.value == ""){
+          alert("网页地址不能为空！");
+          fetchForm.website.focus();
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

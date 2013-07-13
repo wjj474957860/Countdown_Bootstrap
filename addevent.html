@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>添加事项</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="Shortcut Icon" href="img/favicon.ico">
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; } 
+      .ui-timepicker-div dl { text-align: left; } 
+      .ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; } 
+      .ui-timepicker-div dl dd { margin: 0 10px 10px 65px; } 
+      .ui-timepicker-div td { font-size: 90%; } 
+      .ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; } 
+      .ui_tpicker_hour_label,.ui_tpicker_minute_label,.ui_tpicker_second_label, 
+      .ui_tpicker_millisec_label,.ui_tpicker_time_label{padding-left:2px} 
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.3.custom.min.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- 表单，添加事项-->
+      <form name="addForm" method="post" action="add.php" 
+      onSubmit="return addEventCheck(this)" class="form-signin">
+        <h3 id="myModalLabel">请输入结束时间</h3>
+        <hr>
+        <label>时间格式为“<strong>年-月-日 时:分:秒</strong>”</label>
+        <label>例如：<strong>2013-07-01 20:00:23</strong></label>
+        <input type="text" id="endtime" name="endtime" class="input-block-level" placeholder="2013-07-01 20:00:23"> 
+        <label>请为该事项添加备注，例如：<strong>去学习</strong></label>
+        <input type="text" id="note" name="note" class="input-block-level" placeholder="去学习">
+        <hr>
+        <a href="countdown.php" class="btn btn-large " name="submit" type="submit">返回</a>
+        <button class="btn btn-large btn-primary " name="submit" type="submit">确定</button>
+      </form>
+
+    </div> <!-- the end of/container -->
+
+    <script src="js/jquery-2.0.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript">
+      function addEventCheck(addEventForm){
+        if(addEventForm.endtime.value == ""){
+          alert("结束时间不能为空！");
+          addEventForm.endtime.focus();
+          return false;
+        }
+        if(addEventForm.note.value == ""){
+          alert("事项备注不能为空！");
+          addEventForm.note.focus();
+          return false;
+        }
+      }
+    </script>
+    <script type="text/javascript">
+    //汉化操作
+     jQuery(function($){
+        $.datepicker.regional['zh-CN'] = {
+        closeText: '关闭',
+         prevText: '&#x3c;上月',
+         nextText: '下月&#x3e;',
+         currentText: '今天',
+         monthNames: ['一月','二月','三月','四月','五月','六月',
+         '七月','八月','九月','十月','十一月','十二月'],
+         monthNamesShort: ['一','二','三','四','五','六',
+         '七','八','九','十','十一','十二'],
+         dayNames: ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
+         dayNamesShort: ['周日','周一','周二','周三','周四','周五','周六'],
+         dayNamesMin: ['日','一','二','三','四','五','六'],
+         weekHeader: '周',
+         dateFormat: 'yy-mm-dd',
+         firstDay: 0,
+         isRTL: false,
+         showMonthAfterYear: true,
+         yearSuffix: '年'};
+          $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+      });
+      $('#endtime').datetimepicker({
+        showSecond: true,
+        timeFormat: 'HH:mm:ss'
+      });
+    </script>
+  </body>
+</html>
