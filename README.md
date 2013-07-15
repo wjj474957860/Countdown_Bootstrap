@@ -20,7 +20,7 @@ Please pay attention that the needed DataBase called "list.sql" , I put it into 
     |   |-- css
     |   |-- DataBase
     |       |--list.sql
-    |-- img
-    |-- js
-    |-- login.html
+    |   |-- img
+    |   |-- js
+    |   |-- login.html
     |...
