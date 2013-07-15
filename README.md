@@ -16,5 +16,11 @@ Please pay attention that the needed DataBase called "list.sql" , I put it into 
 
     .htdocs
     |-- Countdown_Bootstrap
+    |   |-- countdown
+    |   |-- css
     |   |-- DataBase
     |       |--list.sql
+    |-- img
+    |-- js
+    |-- login.html
+    |...
