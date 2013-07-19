@@ -290,6 +290,46 @@
 		  	</div>
 		</form>
 		</div><!-- End 添加自定义事件弹出窗口 -->
+
+<!-- 结束时间不能为空 -->
+		<div id="endTime" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">提示</h3>
+		  </div>
+		  <div class="modal-body">
+		    <h4>结束时间不能为空！</h4>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
+		  </div>
+		</div><!-- End 结束时间不能为空 -->
+<!-- 事项备注不能为空！ -->
+		<div id="myNote" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">提示</h3>
+		  </div>
+		  <div class="modal-body">
+		    <h4>事项备注不能为空！</h4>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
+		  </div>
+		</div><!-- End 事项备注不能为空！ -->
+<!-- 网页地址不能为空！ -->
+		<div id="myWebsite" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">提示</h3>
+		  </div>
+		  <div class="modal-body">
+		    <h4>网页地址不能为空！</h4>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
+		  </div>
+		</div>
 	</div><!--the end of .container-fluid -->
 
 	<script src="js/jquery-2.0.2.min.js"></script>
@@ -346,13 +386,20 @@
     <script type="text/javascript">
       function addEventCheck(addEventForm){
         if(addEventForm.endtime.value == ""){
-          alert("结束时间不能为空！");
-          addEventForm.endtime.focus();
+          //alert("结束时间不能为空！");
+          $('#endTime').modal('show');
+          $('#endTime').on('hidden', function () {
+  			addEventForm.endtime.focus();
+		  });
+          
           return false;
         }
         if(addEventForm.note.value == ""){
-          alert("事项备注不能为空！");
-          addEventForm.note.focus();
+          //alert("事项备注不能为空！");
+          $('#myNote').modal('show');
+          $('#myNote').on('hidden', function () {
+          	addEventForm.note.focus();
+      	  });
           return false;
         }
       }
@@ -362,8 +409,11 @@
     <script type="text/javascript">
       function fetcheventForm(fetchForm){
         if(fetchForm.website.value == ""){
-          alert("网页地址不能为空！");
-          fetchForm.website.focus();
+          //alert("网页地址不能为空！");
+          $('#myWebsite').modal('show');
+          $('#myWebsite').on('hidden', function () {
+          	fetchForm.website.focus();
+          });
           return false;
         }
       }
