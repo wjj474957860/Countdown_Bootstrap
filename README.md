@@ -28,7 +28,8 @@ the subdirectory called "htdocs" of PHPnow-1.5.6
     
 #### Next, you have to change the password for accessing your own MySQL DB. From above, we can see the file called "conn.php"
 
-{% highlight php %}
+{% highlight PHP %}
+
 <?php 
     ///////////////////////////
     //主要是连接数据库 access MySQL
@@ -51,6 +52,7 @@ the subdirectory called "htdocs" of PHPnow-1.5.6
 	//写库
 	mysql_query("set names utf8");
 ?>
+
 {% endhighlight %}
     
 
