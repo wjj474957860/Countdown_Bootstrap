@@ -30,8 +30,8 @@ the subdirectory called "htdocs" of PHPnow-1.5.6
 
 ```php
 <?php 
-    	///////////////////////////
-    	//主要是连接数据库 access MySQL
+    ///////////////////////////
+    //主要是连接数据库 access MySQL
 	/////////////////////////////
 	//本地访问数据库  access local DB
 	$dbhost = 'localhost'; 
