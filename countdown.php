@@ -72,7 +72,7 @@
 				</li>
 				<li class="divider-vertical">
 					<!-- 添加【关于我们】 -->
-					<a href="#us" role="button" data-toggle="modal" data-toggle="modal"><i class="icon-book"></i>关于我们</a>
+					<a href="#us" role="button" data-toggle="modal" data-toggle="modal"><i class="icon-book"></i>关于</a>
 				</li>
 			</ul>
 
@@ -101,9 +101,6 @@
 				<br>
 				<p class="text-center">
 					华南师范大学 计算机学院 软件工程9班 【高级软件实做】
-				</p>
-				<p class="text-center">
-					<small>By：吴建杰 谭洪杰 王名朗 邓校新 陈培伟</small>
 				</p>
 			</blockquote>
 		</div>
@@ -183,98 +180,40 @@
 		<div id="us" class="modal hide fade" tabindex="-1" role="dialog"  aria-hidden="true">
 			<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							<h3 id="myModalLabel">关于我们</h3>
+							<h3 id="myModalLabel">关于作者</h3>
 			</div>
 			<div class="modal-body">
-							<table class="table table-bordered table-hover ">
-								<thead>
-									<tr>
-										<td></td>
-										<td>
-											<h4 class="text-center">姓名</h4>
-										</td>
-										<td>
-											<h4 class="text-center">学号</h4>
-										</td>
-										<td>
-											<h4 class="text-center">负责任务</h4>
-										</td>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td> <strong>组长</strong>
-										</td>
-										<td>
-											<a href="http://pigerla.com/" alt="吴建杰" title="进入吴建杰个人Blog"> <strong>吴建杰</strong>
-											</a>
-										</td>
-										<td>
-											<strong>20102100035</strong>
-										</td>
-										<td>
-											<strong>前端界面设计与后台逻辑的实现</strong>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<strong>成员</strong>
-										</td>
-										<td>
-											<strong>王名朗</strong>
-										</td>
-										<td>
-											<strong>20102100030</strong>
-										</td>
-										<td>
-											<strong>Android平台界面设计与后台逻辑的实现</strong>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<strong>成员</strong>
-										</td>
-										<td>
-											<strong>邓校新</strong>
-										</td>
-										<td>
-											<strong>20102100036</strong>
-										</td>
-										<td>
-											<strong>Android平台界面设计与实现</strong>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<strong>成员</strong>
-										</td>
-										<td>
-											<strong>谭洪杰</strong>
-										</td>
-										<td>
-											<strong>20102100033</strong>
-										</td>
-										<td>
-											<strong>MySQL数据表设计与实现</strong>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<strong>成员</strong>
-										</td>
-										<td>
-											<strong>陈培伟</strong>
-										</td>
-										<td>
-											<strong>20102100028</strong>
-										</td>
-										<td>
-											<strong>软件测试与文档说明</strong>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<h4>联系及反馈邮箱：474957860@qq.com </h4>
+				<table class="table table-bordered table-hover ">
+					<thead>
+						<tr>
+							<td>
+								<h4 class="text-center">称呼</h4>
+							</td>
+							<td>
+								<h4 class="text-center">微博</h4>
+							</td>
+							<td>
+								<h4 class="text-center">联系及反馈邮箱</h4>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<a href="http://pigerla.com/" alt="Spy" title="进入Spy个人Blog"> <h4 class="text-center">Spy</h4>
+								</a>
+							</td>
+							<td>
+								<a href="http://weibo.com/52spy1314" alt="Spy" title="关注Spy微博"> <h4 class="text-center">Im-Spy</h4>
+								</a>
+							</td>
+							<td>
+								<h4 class="text-center">474957860@qq.com </h4>
+							</td>
+							</tr>
+					</tbody>
+				</table>
+							
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
