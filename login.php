@@ -18,7 +18,7 @@
 
 	    //登录成功直接进入用户中心
 	    header("Location: countdown.php"); 
-	    //echo $username,' 欢迎你！进入 <a href="countdown.php">用户中心</a><br />';
+	    //echo $username,' 欢迎你！进入 <a href="index.php">用户中心</a><br />';
 	    //echo '点击此处 <a href="login.php?action=logout">注销</a> 登录！<br />';
 	    exit;
 	} else {

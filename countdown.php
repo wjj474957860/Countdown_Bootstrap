@@ -64,14 +64,14 @@
 	<!-- 固定位置的导航条 -->
 	<div class="navbar">
 		<div class="navbar-inner">
-			<!-- 左侧导航【首页】【关于我们】-->
+			<!-- 左侧导航【首页】【关于】-->
 			<a class="brand">事项倒计时</a>
 			<ul class="nav ">
 				<li class="divider-vertical">
 					<a href="#"><i class="icon-home"></i>首页</a>
 				</li>
 				<li class="divider-vertical">
-					<!-- 添加【关于我们】 -->
+					<!-- 添加【关于】 -->
 					<a href="#us" role="button" data-toggle="modal" data-toggle="modal"><i class="icon-book"></i>关于</a>
 				</li>
 			</ul>
@@ -97,11 +97,7 @@
 		<hr>
 		<div class="hero-unit">
 			<blockquote>
-				<h1 class="text-center">我们共同开发的“倒计时”!!</h1>
-				<br>
-				<p class="text-center">
-					华南师范大学 计算机学院 软件工程9班 【高级软件实做】
-				</p>
+				<h1 class="text-center">致我们逝去的“时间”</h1>
 			</blockquote>
 		</div>
 
@@ -176,7 +172,7 @@
 		</div>
 		<hr>
 
-<!-- 添加【关于我们】弹出窗口 -->
+<!-- 添加【关于】弹出窗口 -->
 		<div id="us" class="modal hide fade" tabindex="-1" role="dialog"  aria-hidden="true">
 			<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -218,7 +214,7 @@
 			<div class="modal-footer">
 				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
 			</div>
-		</div><!--End 添加【关于我们】弹出窗口 -->
+		</div><!--End 添加【关于】弹出窗口 -->
 
 <!-- 添加【用户】弹出窗口 -->
 		<div id="me" class="modal hide fade" tabindex="-1" role="dialog"  aria-hidden="true">

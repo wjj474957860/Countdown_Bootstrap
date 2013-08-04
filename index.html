@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- 响应式viewport,获取设备的宽度 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A special CountDown List">
+    <meta name="author" content="Spy Email:474957860@qq.com">
+
+	<title>事项倒计时</title>
+	<link rel="Shortcut Icon" href="img/favicon.ico">
+	<!-- Bootstrap的基本css文件 -->
+	<link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+	<!-- 倒计时样式文件 -->
+	<link rel="stylesheet" href="countdown/jquery.countdown.css" />
+	<style type="text/css">
+      body {
+        padding: 30px 15% 30px;
+      }
+      .bgTimeUp{
+      	background: #3A3A3A;
+      }
+	  .countdownHolder {
+		width: 280px;
+	  }
+    </style>
+    <!-- 想要响应式的功能 -->
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 页面的开始 -->
+	<!-- 固定位置的导航条 -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<!-- 左侧导航【首页】【关于】-->
+			<a class="brand">事项倒计时</a>
+			<ul class="nav ">
+				<li class="divider-vertical">
+					<a href="#"><i class="icon-home"></i>首页</a>
+				</li>
+				<li class="divider-vertical">
+					<!-- 添加【关于】 -->
+					<a href="#us" role="button" data-toggle="modal" data-toggle="modal"><i class="icon-book"></i>关于</a>
+				</li>
+			</ul>
+
+			<!--右侧导航【用户名】-->
+			<ul class="nav pull-right">
+				<li class="divider-vertical"></li>
+				<li>
+					<!-- 用户名 -->
+					<a href="#me" role="button" data-toggle="modal" data-toggle="modal" class="navbar-link "><i class="icon-user"></i><strong><?php echo $username;?></strong></a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<!-- 登录 -->
+					 <a href="login.html" class="navbar-link"><i class="icon-off"></i>登录</a>
+				</li>
+				<li><a class="navbar-link">或者</a></li>
+				<li>
+					<!-- 注册 -->
+					 <a href="register.html" class="navbar-link"><i class="icon-edit"></i>注册</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+<!-- 页面主要内容 -->
+	<div class="container-fluid">
+	<!-- 中间大标语 banner -->
+		<hr>
+		<div class="hero-unit">
+			<blockquote>
+				<h1 class="text-center">致我们逝去的“时间”</h1>
+			</blockquote>
+		</div>
+
+<!-- 倒计时的事项列表 -->
+		<table class="table table-bordered table-hover ">
+			<caption>
+				<hr>
+				<h1>每一件事都在倒计时...</h1>
+				<hr>
+				<br>
+			</caption>
+
+	<!-- 表头 -->
+			<thead>
+				<tr>
+					<td >
+						<h3 class="text-center">编号</h3>
+					</td>
+					<td>
+						<h3 class="text-center">备注</h3>
+					</td>
+					<td>
+						<h3 class="text-center">剩余时间 [ 天:时:分:秒 ]</h3>
+					</td>
+					<td>
+						<h3 class="text-center">操作</h3>
+					</td>
+				</tr>
+			</thead>
+		</table>
+
+<!-- 添加事项按钮与实现 -->
+		<hr>
+		<div class="row-fluid">
+  			<div class="span6"><button class="btn btn-large btn-block btn-primary addEvent">添加自定义事项</button></div>
+  			<div class="span6"><button class="btn btn-large btn-block btn-primary fetchEvent">添加网页事项</button></div>
+		</div>
+		<hr>
+
+<!-- 添加【关于】弹出窗口 -->
+		<div id="us" class="modal hide fade" tabindex="-1" role="dialog"  aria-hidden="true">
+			<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">关于作者</h3>
+			</div>
+			<div class="modal-body">
+				<table class="table table-bordered table-hover ">
+					<thead>
+						<tr>
+							<td>
+								<h4 class="text-center">称呼</h4>
+							</td>
+							<td>
+								<h4 class="text-center">微博</h4>
+							</td>
+							<td>
+								<h4 class="text-center">联系及反馈邮箱</h4>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<a href="http://pigerla.com/" alt="Spy" title="进入Spy个人Blog"> <h4 class="text-center">Spy</h4>
+								</a>
+							</td>
+							<td>
+								<a href="http://weibo.com/52spy1314" alt="Spy" title="关注Spy微博"> <h4 class="text-center">Im-Spy</h4>
+								</a>
+							</td>
+							<td>
+								<h4 class="text-center">474957860@qq.com </h4>
+							</td>
+							</tr>
+					</tbody>
+				</table>
+							
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
+			</div>
+		</div><!--End 添加【关于】弹出窗口 -->
+
+<!-- 添加【用户】弹出窗口 -->
+		<div id="me" class="modal hide fade" tabindex="-1" role="dialog"  aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">亲爱的</h3>
+			</div>
+			<div class="modal-body">
+				<h2 class="text-center">请您先注册~</h2>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">确定</button>
+			</div>
+		</div><!-- End 添加【用户】弹出窗口 -->
+
+<!-- 添加自定义事件弹出窗口 -->
+		<div id="add" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h3 id="myModalLabel">抱歉!! ⊙﹏⊙‖</h3>
+			  </div>
+			<div class="modal-body">
+			       <h2 class="text-center">您还不是用户，不能使用该功能！</h2>		    
+		  	</div>
+		  	<div class="modal-footer">
+		    	<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+		    	<button class="btn btn-primary" onclick="document.location.href='register.html'">注册</button>
+		  	</div>
+		</div><!-- End 添加自定义事件弹出窗口 -->
+
+	</div><!--the end of .container-fluid -->
+
+	<script src="js/jquery-2.0.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+<!-- 添加自定义事项、网页事项的响应 -->
+	<script>
+        $(document).ready(function () {
+        	//添加自定义事项的响应
+	        $(".addEvent,.fetchEvent").click(function () {
+				$("#add").modal('show');
+			});			  
+        });
+    </script>
+</body>
+</html>
